@@ -32,7 +32,7 @@ abstract class StringValues {
 
   static const String RATE_US = 'Rate Us';
 
-  static const APP_NAME = 'Multivendor';
+  static const APP_NAME = 'Grocery';
 
   static const CART = 'Cart';
   static const ANY_RESTAURANT_REQUEST = 'Any restaurant request?';
