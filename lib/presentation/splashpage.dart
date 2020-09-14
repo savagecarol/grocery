@@ -7,8 +7,8 @@ import 'package:grocery/presentation/homePage.dart';
 import 'package:grocery/presentation/profilepage.dart';
 import 'package:grocery/presentation/searchpage.dart';
 import 'package:grocery/utils/default.dart';
+import 'package:grocery/utils/string_values.dart';
 import 'package:grocery/utils/styles.dart';
-
 
 class SplashPage extends StatefulWidget {
   static const String routeNamed = 'SplashPage';
@@ -37,17 +37,23 @@ class _SplashPageState extends State<SplashPage> {
   }
 
   _getBottomBar() {
-    return Card(
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.zero),
-      margin: EdgeInsets.all(0),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: <Widget>[
-          _getBottomBarItem(index: 0, icontab: Icons.home),
-          _getBottomBarItem(index: 1, icontab: Icons.search),
-          _getBottomBarItem(index: 2, icontab: Icons.shopping_cart),
-          _getBottomBarItem(index: 3, icontab: Icons.person),
-        ],
+    return Container(
+          child: Card(
+      elevation:200,
+      shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.only(
+        topLeft: Radius.circular(ScreenUtil.instance.setHeight(8)),
+        topRight:Radius.circular(ScreenUtil.instance.setHeight(8))),),
+        margin: EdgeInsets.all(0),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: <Widget>[
+            _getBottomBarItem(index: 0, icontab: Icons.home,text:StringValues.HOME),
+            _getBottomBarItem(index: 1, icontab: Icons.youtube_searched_for,text:StringValues.SEARCH),
+            _getBottomBarItem(index: 2, icontab: Icons.shopping_cart,text:StringValues.CART),
+            _getBottomBarItem(index: 3, icontab: Icons.more_horiz,text:StringValues.MORE),
+          ],
+        ),
       ),
     );
   }
@@ -55,6 +61,7 @@ class _SplashPageState extends State<SplashPage> {
   _getBottomBarItem({
     int index,
     IconData icontab,
+    String text,
   }) {
     return GestureDetector(
       onTap: () {
@@ -63,29 +70,28 @@ class _SplashPageState extends State<SplashPage> {
         });
       },
       child: Container(
+          decoration: BoxDecoration(
+            border: Border(
+            bottom:currentPage == index? BorderSide(width:  ScreenUtil.instance.setHeight(5), color: Styles.BOTTOMNAVIGATIONBAR_BOTTOM_BORDER_COLOR)
+          :BorderSide(width:  ScreenUtil.instance.setHeight(0), color: Colors.transparent)),
+              ),
         alignment: Alignment.center,
-        height: ScreenUtil.instance.setHeight(60),
+         height: ScreenUtil.instance.setHeight(65),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Container(
-              padding: EdgeInsets.all(5),
-              decoration: BoxDecoration(
-                color: currentPage == index
-                    ? Colors.yellow
-                    : Colors.transparent,
-                borderRadius: BorderRadius.circular(5),
-              ),
+              
+            
               child: Center(
                 child: Icon(
                   icontab,
-                  color: currentPage == index
-                      ? Colors.pink
-                      : Colors.white,
+                  color:  Styles.BOTTOMNAVIGATIONBAR_ICON_COLOR,
                   size: ScreenUtil.instance.setHeight(32),
                 ),
               ),
             ),
+            Text(text)
           ],
         ),
       ),

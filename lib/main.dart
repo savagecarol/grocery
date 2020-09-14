@@ -18,9 +18,7 @@ class Grocery extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.brown,
       ),
-      initialRoute: SplashPage.routeNamed,
-      routes: {
-      },
+    home: SplashPage(),
     );
   }
 }
