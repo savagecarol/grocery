@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grocery/model/categories.dart';
 import 'package:grocery/model/popular.dart';
 import 'package:grocery/presentation/custom/category_container.dart';
+import 'package:grocery/presentation/custom/profile_image.dart';
 import 'package:grocery/presentation/custom/scroll_card.dart';
 import 'package:grocery/presentation/custom/textfield.dart';
 import 'package:grocery/utils/string_values.dart';
@@ -26,10 +27,10 @@ class _HomePageState extends State<HomePage> {
     popular = getpopular();
     category = getcategory();
     category_length = category.length;
-     if (category_length % 3 != 0) 
-       category_length = (category_length / 3).toInt()+1 ;
-     else
-       category_length = (category_length / 3).toInt() ;
+    if (category_length % 3 != 0)
+      category_length = (category_length / 3).toInt() + 1;
+    else
+      category_length = (category_length / 3).toInt();
     super.initState();
   }
 
@@ -53,22 +54,7 @@ class _HomePageState extends State<HomePage> {
                     fontFamily: 'Montserrat',
                     fontWeight: FontWeight.w900),
               ),
-              Container(
-                height: ScreenUtil.instance.setHeight(65),
-                width: ScreenUtil.instance.setWidth(65),
-                decoration: BoxDecoration(
-                    boxShadow: [
-                      BoxShadow(
-                          color: Colors.grey,
-                          blurRadius: 30,
-                          offset: Offset(2, 4))
-                    ],
-                    shape: BoxShape.circle,
-                    color: Colors.white,
-                    image: DecorationImage(
-                        image: NetworkImage(Strings.DEFAULT_USER_IMAGE),
-                        fit: BoxFit.fill)),
-              ),
+             ProfileImage(),
             ],
           ),
         ),
@@ -155,35 +141,34 @@ class _HomePageState extends State<HomePage> {
                 fontWeight: FontWeight.w500),
           ),
         ),
-
         SizedBox(
           height: ScreenUtil.instance.setHeight(32),
         ),
-
-       Padding(
+        Padding(
           padding: const EdgeInsets.symmetric(horizontal: 24),
-        child: Container(
-          height: (9 / 3) * ScreenUtil.instance.setHeight(200),
-          width: ScreenUtil.instance.setWidth(ScreenUtil.instance.width),
-          child: GridView.builder(
-              scrollDirection: Axis.horizontal,
-              itemCount: category.length,
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: category_length,
-                mainAxisSpacing: 10,
-                crossAxisSpacing: 5,
-                childAspectRatio: 1.5,
-              ),
-              itemBuilder: (context, index) {
-                return Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 2),
-                  child: CustomCategoryContainer(
-                    image: category[index].image,
-                    name: category[index].name,
-                  ),
-                );
-              }),
-        ),),
+          child: Container(
+            height: (9 / 3) * ScreenUtil.instance.setHeight(200),
+            width: ScreenUtil.instance.setWidth(ScreenUtil.instance.width),
+            child: GridView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: category.length,
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: category_length,
+                  mainAxisSpacing: 10,
+                  crossAxisSpacing: 5,
+                  childAspectRatio: 1.5,
+                ),
+                itemBuilder: (context, index) {
+                  return Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 2),
+                    child: CustomCategoryContainer(
+                      image: category[index].image,
+                      name: category[index].name,
+                    ),
+                  );
+                }),
+          ),
+        ),
       ],
     ));
   }

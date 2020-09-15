@@ -13,9 +13,11 @@ class CustomTextIconCard extends StatelessWidget {
   final bool visiblePreIcon;
   final Color preIconColor;
   final double sizelabelText;
+  final Function onTap;
  
   CustomTextIconCard(
-      {this.text,
+      {this.onTap,
+        this.text,
       this.textSize=19,
       this.postIcon,
       this.postIconSize = 20,
@@ -31,80 +33,79 @@ class CustomTextIconCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
         padding: const EdgeInsets.symmetric(horizontal: 1, vertical: 1),
-        child: Container(
-            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-            height: ScreenUtil.instance.setHeight(70),
-            margin: EdgeInsets.only(bottom: ScreenUtil.instance.setHeight(24)),
-            decoration: BoxDecoration(
-              color:Colors.white,
-                borderRadius: BorderRadius.circular(5),
-                boxShadow: [
-                  BoxShadow(
-                      color: Styles.CUSTOM_SHADOW_COLOR,
-                      blurRadius: 15,
-                      offset: Offset(4, 4))
-                ]),
-            child: Container(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-
-                         Container(
-                        child: ( visiblePreIcon == true)
-                            ? Container(
-                                child: Icon(
-                                  preIcon,
-                                  size: preIconSize,
-                                  color: preIconColor,
-                                ),
-                              )
-                            : Container(),
-                      ),
-
-
-
-
-                
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      
-                        Container(
-                                child:Text(
-                                 text,
-                                  style: TextStyle(
-                                   fontSize: 19,
-                                color: Colors.black,
-                              fontFamily: 'Montserrat',
-                                 fontWeight: FontWeight.w500),
-                              ),
-                      ),
-                          Container(
-                            child:( visiblePreIcon == true)? SizedBox(
-                            width: ScreenUtil.instance.setWidth(10), ):Container()
-                                ),
-
-
+        child: InkWell(
+              onTap: onTap ,
+                  child: Container(
+              padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+              height: ScreenUtil.instance.setHeight(70),
+              margin: EdgeInsets.only(bottom: ScreenUtil.instance.setHeight(24)),
+              decoration: BoxDecoration(
+                color:Colors.white,
+                  borderRadius: BorderRadius.circular(5),
+                  boxShadow: [
+                    BoxShadow(
+                        color: Styles.CUSTOM_SHADOW_COLOR,
+                        blurRadius: 15,
+                        offset: Offset(4, 4))
+                  ]),
+              child: Container(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
 
                            Container(
-                    child: (visiblePostIcon == true)
-                        ? Container(
-                            child: Icon(
-                              postIcon,
-                              size: postIconSize,
-                            ),
-                          )
-                        : Container(),
-                  ),
+                          child: ( visiblePreIcon == true)
+                              ? Container(
+                                  child: Icon(
+                                    preIcon,
+                                    size: preIconSize,
+                                    color: preIconColor,
+                                  ),
+                                )
+                              : Container(),
+                        ),
+
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        
+                          Container(
+                                  child:Text(
+                                   text,
+                                    style: TextStyle(
+                                     fontSize: 19,
+                                  color: Colors.black,
+                                fontFamily: 'Montserrat',
+                                   fontWeight: FontWeight.w500),
+                                ),
+                        ),
+                            Container(
+                              child:( visiblePreIcon == true)? SizedBox(
+                              width: ScreenUtil.instance.setWidth(10), ):Container()
+                                  ),
 
 
 
-                    ],
-                  ),
+                             Container(
+                      child: (visiblePostIcon == true)
+                          ? Container(
+                              child: Icon(
+                                postIcon,
+                                size: postIconSize,
+                              ),
+                            )
+                          : Container(),
+                    ),
 
-                ],
 
-              ),
-            )));
+
+                      ],
+                    ),
+
+                  ],
+
+                ),
+              )),
+        ));
   }
 }

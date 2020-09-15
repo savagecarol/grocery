@@ -6,6 +6,7 @@ abstract class Strings {
 
   // User Info
   static const String DEFAULT_USER = 'User John Doe';
+  static const String DEFAUTLT_EMAIL = 'JohnDoe1234@gmaial.com';
   static const String DEFAULT_NUMBER = '783098XXXX';
   static const String DEFAULT_USER_IMAGE =
       'https://www.argentum.org/wp-content/uploads/2018/12/blank-profile-picture-973460_6404.png';
@@ -29,4 +30,14 @@ abstract class Strings {
   static const String FAQS = 'FAQs';
   static const String CONTACT_US = 'Contact us';
   static const String LOG_OUT = 'Log Out';
+
+
+
+   static const String HISTORY = 'History';
+    static const String PAYMENT_MATHODS = 'Payment Methods';
+     static const String NOTIFICATIONS = 'Notifications';
+      static const String MY_OFFERS = 'My Offers';
+
+
+
 }
