@@ -20,4 +20,13 @@ abstract class Strings {
   static const String OFFERS = 'Offers';
   static const String CATEGORIES = 'Categories';
 
+  static const String SEARCH_FOR_AN_ITEM = 'Search For An Item';
+  static const String MORE_OPTIONS = 'More Options';
+
+  static const String MY_ACCOUNT = 'My Account';
+  static const String INVITE = 'Invite';
+  static const String PRIVACY_POLICY = 'Privacy Policy';
+  static const String FAQS = 'FAQs';
+  static const String CONTACT_US = 'Contact us';
+  static const String LOG_OUT = 'Log Out';
 }

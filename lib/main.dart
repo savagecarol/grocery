@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:grocery/presentation/registration.dart';
 import 'package:grocery/presentation/splashpage.dart';
 import 'package:grocery/utils/string_values.dart';
 
@@ -16,7 +17,7 @@ class Grocery extends StatelessWidget {
       title: Strings.APP_NAME,
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.brown,
+       primaryColor: Colors.white
       ),
     home: SplashPage(),
     );

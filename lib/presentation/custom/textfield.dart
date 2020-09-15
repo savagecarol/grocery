@@ -39,6 +39,8 @@ class CustomTextField extends StatelessWidget {
       child: Container(
         width: ScreenUtil.instance
             .setWidth(ScreenUtil.instance.setWidth(ScreenUtil.instance.width)),
+            
+        
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(5),
             color: Colors.white,
@@ -71,6 +73,7 @@ class CustomTextField extends StatelessWidget {
                   hintStyle: TextStyle(
                       fontSize: hintTextSize,
                       fontFamily: 'Montserrat',
+                        color: Colors.black.withOpacity(0.5),
                       fontWeight: FontWeight.w300))),
         ),
       ),

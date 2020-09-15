@@ -4,7 +4,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grocery/presentation/cart.dart';
 import 'package:grocery/presentation/homePage.dart';
-import 'package:grocery/presentation/profilepage.dart';
+import 'package:grocery/presentation/more.dart';
 import 'package:grocery/presentation/searchpage.dart';
 import 'package:grocery/utils/default.dart';
 import 'package:grocery/utils/string_values.dart';
@@ -29,7 +29,7 @@ class _SplashPageState extends State<SplashPage> {
         return Cart();
         break;
       case 3:
-        return ProfilePage();
+        return More();
         break;
       // default:
       //   return HomePage();
