@@ -69,6 +69,11 @@ flutter:
     - family: Montserrat
       fonts:
         - asset: fonts/Montserrat-Regular.ttf
+    - family: Montserrat
+      fonts:
+        - asset: fonts/Montserrat-bold.ttf
+          weight: 900
+
      
   #   - family: Schyler
   #     fonts:

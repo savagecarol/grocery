@@ -39,7 +39,7 @@ class _SplashPageState extends State<SplashPage> {
   _getBottomBar() {
     return Container(
           child: Card(
-      elevation:200,
+      elevation:250,
       shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.only(
         topLeft: Radius.circular(ScreenUtil.instance.setHeight(8)),
@@ -48,10 +48,10 @@ class _SplashPageState extends State<SplashPage> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: <Widget>[
-            _getBottomBarItem(index: 0, icontab: Icons.home,text:StringValues.HOME),
-            _getBottomBarItem(index: 1, icontab: Icons.youtube_searched_for,text:StringValues.SEARCH),
-            _getBottomBarItem(index: 2, icontab: Icons.shopping_cart,text:StringValues.CART),
-            _getBottomBarItem(index: 3, icontab: Icons.more_horiz,text:StringValues.MORE),
+            _getBottomBarItem(index: 0, icontab: Icons.home,text:Strings.HOME),
+            _getBottomBarItem(index: 1, icontab: Icons.youtube_searched_for,text:Strings.SEARCH),
+            _getBottomBarItem(index: 2, icontab: Icons.shopping_cart,text:Strings.CART),
+            _getBottomBarItem(index: 3, icontab: Icons.more_horiz,text:Strings.MORE),
           ],
         ),
       ),
@@ -91,7 +91,10 @@ class _SplashPageState extends State<SplashPage> {
                 ),
               ),
             ),
-            Text(text)
+            Text(text,style: TextStyle(
+                    fontSize: 12,
+                    fontFamily: 'Montserrat',
+                    fontWeight: FontWeight.w700),)
           ],
         ),
       ),

@@ -13,7 +13,7 @@ class Grocery extends StatelessWidget {
       DeviceOrientation.portraitDown,
     ]);
     return MaterialApp(
-      title: StringValues.APP_NAME,
+      title: Strings.APP_NAME,
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.brown,
