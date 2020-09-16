@@ -46,7 +46,7 @@ class CustomTextIconCard extends StatelessWidget {
                     BoxShadow(
                         color: Styles.CUSTOM_SHADOW_COLOR,
                         blurRadius: 15,
-                        offset: Offset(4, 4))
+                        offset: Offset(0, 2))
                   ]),
               child: Container(
                 child: Row(

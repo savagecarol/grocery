@@ -2,14 +2,15 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:grocery/model/categories.dart';
-import 'package:grocery/model/popular.dart';
+import 'package:grocery/models/categories.dart';
+import 'package:grocery/models/popular.dart';
 import 'package:grocery/presentation/custom/category_container.dart';
 import 'package:grocery/presentation/custom/profile_image.dart';
 import 'package:grocery/presentation/custom/scroll_card.dart';
 import 'package:grocery/presentation/custom/textfield.dart';
+import 'package:grocery/presentation/food.dart';
 import 'package:grocery/utils/string_values.dart';
-import 'package:grocery/utils/styles.dart';
+
 
 class HomePage extends StatefulWidget {
   HomePage({Key key}) : super(key: key);
@@ -33,6 +34,14 @@ class _HomePageState extends State<HomePage> {
       category_length = (category_length / 3).toInt();
     super.initState();
   }
+
+
+  _navigateToFoodPage()
+  {
+        Navigator.pushNamed(context, FoodPage.routeNamed);
+  }
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -92,39 +101,39 @@ class _HomePageState extends State<HomePage> {
               itemCount: popular.length,
               itemBuilder: (context, index) {
                 return Container(
-                  margin: const EdgeInsets.only(left: 10),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      CustomScrollContainerField(
-                        image: popular[index].image,
-                      ),
-                      SizedBox(
-                        height: ScreenUtil.instance.setHeight(5),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                        child: Text(
-                          popular[index].name,
-                          style: TextStyle(
-                              fontSize: 14,
-                              fontFamily: 'Montserrat',
-                              fontWeight: FontWeight.w500),
+                    margin: const EdgeInsets.only(left: 10),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        CustomScrollContainerField(
+                          image: popular[index].image,
                         ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                        child: Text(
-                          popular[index].address,
-                          style: TextStyle(
-                              fontSize: 14,
-                              fontFamily: 'Montserrat',
-                              fontWeight: FontWeight.w500),
+                        SizedBox(
+                          height: ScreenUtil.instance.setHeight(5),
                         ),
-                      ),
-                    ],
-                  ),
-                );
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                          child: Text(
+                            popular[index].name,
+                            style: TextStyle(
+                                fontSize: 14,
+                                fontFamily: 'Montserrat',
+                                fontWeight: FontWeight.w500),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                          child: Text(
+                            popular[index].address,
+                            style: TextStyle(
+                                fontSize: 14,
+                                fontFamily: 'Montserrat',
+                                fontWeight: FontWeight.w500),
+                          ),
+                        ),
+                      ],
+                    ),
+                  );
               }),
         ),
         SizedBox(
@@ -164,6 +173,7 @@ class _HomePageState extends State<HomePage> {
                     child: CustomCategoryContainer(
                       image: category[index].image,
                       name: category[index].name,
+                      onTap:_navigateToFoodPage, 
                     ),
                   );
                 }),

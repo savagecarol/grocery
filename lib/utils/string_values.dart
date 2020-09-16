@@ -51,4 +51,13 @@ abstract class Strings {
   static const String DEBIT_CARD_IMAGE = 'assets/card.jpeg';
 
   static const String SELECT_PAYMENT_METHODS = 'Select Payment Methods';
+  static const String CREDT_AND_DEBIT_CARD = 'Credit and Debit Cards';
+
+  static const String RATE_US = 'Rate Us';
+    static const String FOOD = 'Food';
+        static const String POPULAR = 'Popular';
+            static const String NEAR_YOU = 'Near You';
+
+
+    static const String FIND_FOOD_OR_RESTAURANT='Find A Food Or A Restaurant';
 }

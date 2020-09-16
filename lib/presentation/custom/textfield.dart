@@ -16,6 +16,8 @@ class CustomTextField extends StatelessWidget {
   final bool isPrefixIcon;
   final double preIconSize;
   final double padding;
+  final bool size;
+
   CustomTextField({
     this.labelText,
     this.hintText,
@@ -30,6 +32,7 @@ class CustomTextField extends StatelessWidget {
     this.icon = Icons.location_on,
     this.isPrefixIcon = false,
     this.padding = 20,
+    this.size=false
   });
 
   @override
@@ -37,10 +40,8 @@ class CustomTextField extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: padding),
       child: Container(
-        width: ScreenUtil.instance
-            .setWidth(ScreenUtil.instance.setWidth(ScreenUtil.instance.width)),
-            
-        
+         width: ScreenUtil.instance
+          .setWidth(width ??  (size)?ScreenUtil.instance.setWidth(ScreenUtil.instance.width):ScreenUtil.instance.setWidth(380)),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(5),
             color: Colors.white,
@@ -73,7 +74,7 @@ class CustomTextField extends StatelessWidget {
                   hintStyle: TextStyle(
                       fontSize: hintTextSize,
                       fontFamily: 'Montserrat',
-                        color: Colors.black.withOpacity(0.5),
+                      color: Colors.black.withOpacity(0.5),
                       fontWeight: FontWeight.w300))),
         ),
       ),

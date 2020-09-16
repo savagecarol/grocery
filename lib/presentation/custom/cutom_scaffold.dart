@@ -5,11 +5,12 @@ class CustomScaffold extends StatelessWidget {
   final Function appbarOnTap;
   final Widget body;
   final String appBarText;
-
+  final double appBarTextSize;
   CustomScaffold({
     this.appbarOnTap,
     this.body,
     this.appBarText,
+    this. appBarTextSize:19
   });
 
   @override
@@ -33,7 +34,7 @@ class CustomScaffold extends StatelessWidget {
               Text(
                 appBarText,
                 style: TextStyle(
-                    fontSize: 19,
+                    fontSize: appBarTextSize,
                     color: Colors.black,
                     fontFamily: 'Montserrat',
                     fontWeight: FontWeight.w400),

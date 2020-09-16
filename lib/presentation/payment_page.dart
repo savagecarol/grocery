@@ -26,6 +26,7 @@ class _PaymentPageState extends State<PaymentPage> {
     return CustomScaffold(
       appBarText: Strings.SELECT_PAYMENT_METHODS,
       appbarOnTap:_navigateToMyAccountePage ,
+      appBarTextSize:16,
       body: Container(
         color: Styles.PRIMARY_COLOR,
         child: Padding(
@@ -37,7 +38,7 @@ class _PaymentPageState extends State<PaymentPage> {
                 children: <Widget>[
                     Container(
                     child: Text(
-                        Strings.YOU_DONT_HAVE_ANY_NEW_OFFERRS,
+                        Strings.CREDT_AND_DEBIT_CARD,
                         style: TextStyle(
                             fontSize: 14,
                             color: Colors.black.withOpacity(.5),
@@ -93,7 +94,7 @@ class _PaymentPageState extends State<PaymentPage> {
 
             Container(
                     child: Text(
-                        Strings.YOU_DONT_HAVE_ANY_NEW_OFFERRS,
+                        Strings.CREDT_AND_DEBIT_CARD,
                         style: TextStyle(
                             fontSize: 14,
                             color: Colors.black.withOpacity(.5),
@@ -106,7 +107,7 @@ class _PaymentPageState extends State<PaymentPage> {
 
 
                    SizedBox(
-                          height: ScreenUtil.instance.setHeight(88),
+                          height: ScreenUtil.instance.setHeight(32),
                         ),
 
 

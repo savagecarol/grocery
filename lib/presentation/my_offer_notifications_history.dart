@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:grocery/model/historymodel.dart';
+import 'package:grocery/models/historymodel.dart';
 import 'package:grocery/presentation/custom/cutom_scaffold.dart';
 import 'package:grocery/presentation/myaccount.dart';
 import 'package:grocery/utils/default.dart';

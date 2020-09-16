@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:grocery/presentation/food.dart';
 import 'package:grocery/presentation/my_offer_notifications_history.dart';
 import 'package:grocery/presentation/myaccount.dart';
 import 'package:grocery/presentation/payment_page.dart';
@@ -27,6 +28,7 @@ class Grocery extends StatelessWidget {
            MyAccount.routeNamed: (BuildContext context) => MyAccount(),
              OfferNotifyHistoryPage.routeNamed: (BuildContext context) => OfferNotifyHistoryPage(),
               PaymentPage.routeNamed: (BuildContext context) => PaymentPage(),
+                FoodPage.routeNamed: (BuildContext context) => FoodPage(),
         });
   }
 }
