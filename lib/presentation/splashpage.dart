@@ -106,11 +106,13 @@ class _SplashPageState extends State<SplashPage> {
     ScreenUtil.instance = ScreenUtil(
         height: defaultHeight, width: defaultWidth, allowFontScaling: false)
       ..init(context);
-    return Scaffold(
-        body: Column(
-      children: <Widget>[Expanded(child: _getBody()), _getBottomBar()],
-    ),
-    resizeToAvoidBottomPadding: false,
+    return SafeArea(
+          child: Scaffold(
+          body: Column(
+        children: <Widget>[Expanded(child: _getBody()), _getBottomBar()],
+      ),
+      resizeToAvoidBottomPadding: false,
+      ),
     );
   }
 }

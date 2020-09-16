@@ -31,13 +31,24 @@ abstract class Strings {
   static const String CONTACT_US = 'Contact us';
   static const String LOG_OUT = 'Log Out';
 
+  static const String HISTORY = 'History';
+  static const String PAYMENT_MATHODS = 'Payment Methods';
+  static const String NOTIFICATIONS = 'Notifications';
+  static const String MY_OFFERS = 'My Offers';
 
+  static const String DEFAULT_GENRAL_IMAGE =
+      'https://i.pinimg.com/originals/24/37/bd/2437bd9758a684862c11aa9e8f20341a.jpg';
 
-   static const String HISTORY = 'History';
-    static const String PAYMENT_MATHODS = 'Payment Methods';
-     static const String NOTIFICATIONS = 'Notifications';
-      static const String MY_OFFERS = 'My Offers';
+  static const String YOU_DONT_HAVE_ANY_NEW_OFFERRS =
+      "You Don't have Any New Offers";
 
+  static const String NO_NOTIFICATIONS = 'No Notifications';
+  static const String NO_HISTORY = 'No History';
 
+  static const String DATE = 'Date';
+  static const String ORDER_NUMBER = 'Order Number';
 
+  static const String DEBIT_CARD_IMAGE = 'assets/card.jpeg';
+
+  static const String SELECT_PAYMENT_METHODS = 'Select Payment Methods';
 }
