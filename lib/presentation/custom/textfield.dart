@@ -17,32 +17,41 @@ class CustomTextField extends StatelessWidget {
   final double preIconSize;
   final double padding;
   final bool size;
+  final bool onRegPage;
 
-  CustomTextField({
-    this.labelText,
-    this.hintText,
-    this.preIconSize = 30,
-    this.hintTextSize = 16,
-    this.initialValue,
-    this.width,
-    this.onSaved,
-    this.onChanged,
-    this.validator,
-    this.textInputType = TextInputType.text,
-    this.icon = Icons.location_on,
-    this.isPrefixIcon = false,
-    this.padding = 20,
-    this.size=false
-  });
+  CustomTextField(
+      {this.labelText,
+      this.hintText,
+      this.preIconSize = 30,
+      this.hintTextSize = 16,
+      this.initialValue,
+      this.width,
+      this.onSaved,
+      this.onChanged,
+      this.validator,
+      this.textInputType = TextInputType.text,
+      this.icon = Icons.location_on,
+      this.isPrefixIcon = false,
+      this.padding = 20,
+      this.size = false,
+      this.onRegPage=false});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: padding),
       child: Container(
-         width: ScreenUtil.instance
-          .setWidth(width ??  (size)?ScreenUtil.instance.setWidth(ScreenUtil.instance.width):ScreenUtil.instance.setWidth(380)),
-        decoration: BoxDecoration(
+        width: ScreenUtil.instance.setWidth(width ?? (size)
+            ? ScreenUtil.instance.setWidth(ScreenUtil.instance.width)
+            : ScreenUtil.instance.setWidth(380)),
+        decoration:(onRegPage==true)?BoxDecoration(
+             borderRadius: BorderRadius.circular(5),
+               color: Colors.white,
+                border: Border.all(
+                 width: 2, 
+                 color: Styles.BOTTOMNAVIGATIONBAR_ICON_COLOR
+            ),
+        ) :BoxDecoration(
             borderRadius: BorderRadius.circular(5),
             color: Colors.white,
             boxShadow: [
@@ -51,6 +60,10 @@ class CustomTextField extends StatelessWidget {
                   blurRadius: 20,
                   offset: Offset(2, 4))
             ]),
+
+
+
+
         child: Padding(
           padding:
               (isPrefixIcon) ? EdgeInsets.all(0) : EdgeInsets.only(left: 16),

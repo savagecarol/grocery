@@ -8,7 +8,7 @@ abstract class Styles {
       Color(0xff226089);
 
   static const Color ICON_COLOR = Color(0xff226089);
-
+  static const Color REGISTER_BACKAGROUND_COLOR = Color(0xff4592AF);
   // text field
 
   static const CUSTOM_SHADOW_COLOR = Color(0xffe6e6e6);

@@ -4,6 +4,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grocery/presentation/custom/text_icon_card.dart';
 import 'package:grocery/presentation/myaccount.dart';
+import 'package:grocery/presentation/registration.dart';
 import 'package:grocery/utils/string_values.dart';
 
 class More extends StatefulWidget {
@@ -17,6 +18,11 @@ class _MoreState extends State<More> {
 
     _navigateToMyAccountPage() {
     Navigator.pushNamed(context, MyAccount.routeNamed);
+  }
+
+
+   _navigateToLoginPage() {
+    Navigator.pushNamed(context,LoginPage.routeNamed);
   }
 
 
@@ -118,6 +124,9 @@ class _MoreState extends State<More> {
 
 
 
+
+
+
     CustomTextIconCard(
 
                   visiblePreIcon: true,
@@ -135,6 +144,8 @@ class _MoreState extends State<More> {
 
 
 
+
+
     CustomTextIconCard(
 
                   visiblePreIcon: true,
@@ -147,17 +158,14 @@ class _MoreState extends State<More> {
                    visiblePostIcon: true,
                    postIcon: Icons.arrow_forward,
                    postIconSize: 25,
+
+                   onTap: _navigateToLoginPage,
                 ),
+           
 
 
 
 
-
-
-              
-              
-              
-              
               ],
             )
             ),

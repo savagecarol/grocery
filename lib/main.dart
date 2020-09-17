@@ -26,13 +26,14 @@ class Grocery extends StatelessWidget {
         theme: ThemeData(primaryColor: Colors.white,),
         initialRoute: SplashPage.routeNamed,
         routes: {
-           SplashPage.routeNamed: (BuildContext context) => SplashPage(),
-           MyAccount.routeNamed: (BuildContext context) => MyAccount(),
-             OfferNotifyHistoryPage.routeNamed: (BuildContext context) => OfferNotifyHistoryPage(),
-              PaymentPage.routeNamed: (BuildContext context) => PaymentPage(),
-                FoodPage.routeNamed: (BuildContext context) => FoodPage(),
-                 MedicalPage.routeNamed: (BuildContext context) => MedicalPage(),
-                   Prescription.routeNamed: (BuildContext context) => Prescription(),
+            SplashPage.routeNamed: (BuildContext context) => SplashPage(),
+            MyAccount.routeNamed: (BuildContext context) => MyAccount(),
+            OfferNotifyHistoryPage.routeNamed: (BuildContext context) => OfferNotifyHistoryPage(),
+            PaymentPage.routeNamed: (BuildContext context) => PaymentPage(),
+            FoodPage.routeNamed: (BuildContext context) => FoodPage(),
+            MedicalPage.routeNamed: (BuildContext context) => MedicalPage(),
+            Prescription.routeNamed: (BuildContext context) => Prescription(),
+            LoginPage.routeNamed: (BuildContext context) => LoginPage(),
         });
   }
 }

@@ -5,13 +5,18 @@ abstract class Strings {
   static const APP_NAME = 'Grocery';
 
   // User Info
+
   static const String DEFAULT_USER = 'User John Doe';
   static const String DEFAUTLT_EMAIL = 'JohnDoe1234@gmaial.com';
   static const String DEFAULT_NUMBER = '783098XXXX';
   static const String DEFAULT_USER_IMAGE =
       'https://www.argentum.org/wp-content/uploads/2018/12/blank-profile-picture-973460_6404.png';
 
+  static const String IMAGE = 
+  'https://i.pinimg.com/originals/24/37/bd/2437bd9758a684862c11aa9e8f20341a.jpg';
 // bottom nav bar
+  static const String NAME='Name';
+  static const String Email='Email';
   static const String CART = 'Cart';
   static const String HOME = 'Home';
   static const String SEARCH = 'Search';
