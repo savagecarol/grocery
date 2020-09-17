@@ -60,4 +60,10 @@ abstract class Strings {
 
 
     static const String FIND_FOOD_OR_RESTAURANT='Find A Food Or A Restaurant';
+
+    static const String MEDICAL = 'Medical';
+
+     static const String UPLOAD_NEW_PRESCRIPTION = 'Upload New Prescription';
+      static const String PENDING_REPORTS = 'Pending Reports';
+         static const String NO_PENDING_REPORTS = 'No Pending Reports';
 }

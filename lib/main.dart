@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:grocery/presentation/food.dart';
+import 'package:grocery/presentation/medical.dart';
 import 'package:grocery/presentation/my_offer_notifications_history.dart';
 import 'package:grocery/presentation/myaccount.dart';
 import 'package:grocery/presentation/payment_page.dart';
+import 'package:grocery/presentation/pending_prescription.dart';
 import 'package:grocery/presentation/registration.dart';
 import 'package:grocery/presentation/splashpage.dart';
 import 'package:grocery/utils/string_values.dart';
@@ -29,6 +31,8 @@ class Grocery extends StatelessWidget {
              OfferNotifyHistoryPage.routeNamed: (BuildContext context) => OfferNotifyHistoryPage(),
               PaymentPage.routeNamed: (BuildContext context) => PaymentPage(),
                 FoodPage.routeNamed: (BuildContext context) => FoodPage(),
+                 MedicalPage.routeNamed: (BuildContext context) => MedicalPage(),
+                   PendingReports.routeNamed: (BuildContext context) => PendingReports(),
         });
   }
 }

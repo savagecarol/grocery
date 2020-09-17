@@ -47,7 +47,7 @@ class CustomCategoryContainer extends StatelessWidget {
                   child: Text(
                     name,
                     style: TextStyle(
-                        fontSize: 18,
+                        fontSize: 16,
                         fontFamily: 'Montserrat',
                         fontWeight: FontWeight.w500),
                   ),

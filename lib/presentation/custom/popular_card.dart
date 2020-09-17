@@ -35,8 +35,8 @@ class CustomPopularCard extends StatelessWidget {
                         boxShadow: [
                           BoxShadow(
                               color: Styles.CUSTOM_SHADOW_COLOR,
-                              blurRadius: 10,
-                              offset: Offset(4, 4))
+                              blurRadius: 15,
+                              offset: Offset(0, 2))
                         ]),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -71,7 +71,7 @@ class CustomPopularCard extends StatelessWidget {
                         style: TextStyle(
                             fontFamily: 'Montserrat',
                             fontSize: 16,
-                            fontWeight: FontWeight.w500)),
+                            fontWeight: FontWeight.w600)),
                     SizedBox(
                       height: ScreenUtil.instance.setHeight(5),
                     ),

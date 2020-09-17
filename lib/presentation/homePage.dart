@@ -9,8 +9,9 @@ import 'package:grocery/presentation/custom/profile_image.dart';
 import 'package:grocery/presentation/custom/scroll_card.dart';
 import 'package:grocery/presentation/custom/textfield.dart';
 import 'package:grocery/presentation/food.dart';
+import 'package:grocery/presentation/medical.dart';
+import 'package:grocery/presentation/payment_page.dart';
 import 'package:grocery/utils/string_values.dart';
-
 
 class HomePage extends StatefulWidget {
   HomePage({Key key}) : super(key: key);
@@ -23,6 +24,7 @@ class _HomePageState extends State<HomePage> {
   List<PopularModel> popular = List<PopularModel>();
   List<CategoriesModel> category = List<CategoriesModel>();
   int category_length;
+  int category_page;
   @override
   void initState() {
     popular = getpopular();
@@ -35,13 +37,13 @@ class _HomePageState extends State<HomePage> {
     super.initState();
   }
 
-
-  _navigateToFoodPage()
-  {
-        Navigator.pushNamed(context, FoodPage.routeNamed);
+  _navigateToDefaultPage(var index) {
+     if (index == 0) Navigator.pushNamed(context, FoodPage.routeNamed);
+    if (index == 1) Navigator.pushNamed(context, MedicalPage.routeNamed);
+        if (index == 2) Navigator.pushNamed(context, FoodPage.routeNamed);
+    if (index == 3) Navigator.pushNamed(context, FoodPage.routeNamed);
+    if (index == 4) Navigator.pushNamed(context, FoodPage.routeNamed);
   }
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -63,7 +65,7 @@ class _HomePageState extends State<HomePage> {
                     fontFamily: 'Montserrat',
                     fontWeight: FontWeight.w900),
               ),
-             ProfileImage(),
+              ProfileImage(),
             ],
           ),
         ),
@@ -101,39 +103,39 @@ class _HomePageState extends State<HomePage> {
               itemCount: popular.length,
               itemBuilder: (context, index) {
                 return Container(
-                    margin: const EdgeInsets.only(left: 10),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        CustomScrollContainerField(
-                          image: popular[index].image,
+                  margin: const EdgeInsets.only(left: 10),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      CustomScrollContainerField(
+                        image: popular[index].image,
+                      ),
+                      SizedBox(
+                        height: ScreenUtil.instance.setHeight(5),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                        child: Text(
+                          popular[index].name,
+                          style: TextStyle(
+                              fontSize: 14,
+                              fontFamily: 'Montserrat',
+                              fontWeight: FontWeight.w500),
                         ),
-                        SizedBox(
-                          height: ScreenUtil.instance.setHeight(5),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                        child: Text(
+                          popular[index].address,
+                          style: TextStyle(
+                              fontSize: 14,
+                              fontFamily: 'Montserrat',
+                              fontWeight: FontWeight.w500),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                          child: Text(
-                            popular[index].name,
-                            style: TextStyle(
-                                fontSize: 14,
-                                fontFamily: 'Montserrat',
-                                fontWeight: FontWeight.w500),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                          child: Text(
-                            popular[index].address,
-                            style: TextStyle(
-                                fontSize: 14,
-                                fontFamily: 'Montserrat',
-                                fontWeight: FontWeight.w500),
-                          ),
-                        ),
-                      ],
-                    ),
-                  );
+                      ),
+                    ],
+                  ),
+                );
               }),
         ),
         SizedBox(
@@ -156,7 +158,7 @@ class _HomePageState extends State<HomePage> {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 24),
           child: Container(
-            height: (9 / 3) * ScreenUtil.instance.setHeight(200),
+            height: category_length * ScreenUtil.instance.setHeight(200),
             width: ScreenUtil.instance.setWidth(ScreenUtil.instance.width),
             child: GridView.builder(
                 scrollDirection: Axis.horizontal,
@@ -168,13 +170,15 @@ class _HomePageState extends State<HomePage> {
                   childAspectRatio: 1.5,
                 ),
                 itemBuilder: (context, index) {
+                  category_page = index;
                   return Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 2),
                     child: CustomCategoryContainer(
-                      image: category[index].image,
-                      name: category[index].name,
-                      onTap:_navigateToFoodPage, 
-                    ),
+                        image: category[index].image,
+                        name: category[index].name,
+                        onTap: () {
+                          _navigateToDefaultPage(index);
+                        }),
                   );
                 }),
           ),

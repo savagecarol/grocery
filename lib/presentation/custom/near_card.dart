@@ -32,17 +32,17 @@ class CustomNearCard extends StatelessWidget {
         onTap: onTap,
         child: Container(
           margin: EdgeInsets.only(bottom: 14),
-          decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(5),
-              color: Colors.white,
-              boxShadow: [
-                BoxShadow(
-                    color: (menupage)
-                        ? Colors.yellowAccent
-                        : Styles.CUSTOM_SHADOW_COLOR.withOpacity(.5),
-                    blurRadius: (menupage) ? 8 : 2,
-                    offset: Offset(0, 0))
-              ]),
+
+           decoration: BoxDecoration(
+                        color: Styles.PRIMARY_COLOR,
+                        borderRadius: BorderRadius.circular(5),
+                        boxShadow: [
+                          BoxShadow(
+                              color: Styles.CUSTOM_SHADOW_COLOR,
+                              blurRadius: 15,
+                              offset: Offset(0, 2))
+                        ]),
+
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.start,
@@ -75,7 +75,7 @@ class CustomNearCard extends StatelessWidget {
                               fontSize: (menupage)
                                   ? 20
                                   : 16,
-                              fontWeight: FontWeight.w500)),
+                              fontWeight: FontWeight.w600)),
                       SizedBox(
                         height: (menupage)
                             ? ScreenUtil.instance.setHeight(10)
