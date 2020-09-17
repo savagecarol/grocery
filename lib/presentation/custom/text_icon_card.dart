@@ -14,11 +14,13 @@ class CustomTextIconCard extends StatelessWidget {
   final Color preIconColor;
   final double sizelabelText;
   final Function onTap;
- 
+  final Color defaultColor;
+  final bool otherContainer;
+  final Color postIconColor;
   CustomTextIconCard(
       {this.onTap,
-        this.text,
-      this.textSize=19,
+      this.text,
+      this.textSize = 19,
       this.postIcon,
       this.postIconSize = 20,
       this.visiblePostIcon = false,
@@ -26,86 +28,134 @@ class CustomTextIconCard extends StatelessWidget {
       this.preIconSize = 24,
       this.visiblePreIcon = false,
       this.sizelabelText = 20,
-   
-      this.preIconColor=Styles.ICON_COLOR});
+      this.defaultColor = Styles.PRIMARY_COLOR,
+      this.preIconColor = Styles.ICON_COLOR,
+      this.otherContainer = false,
+      this.postIconColor=Colors.black});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
         padding: const EdgeInsets.symmetric(horizontal: 1, vertical: 1),
         child: InkWell(
-              onTap: onTap ,
-                  child: Container(
-              padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-              height: ScreenUtil.instance.setHeight(70),
-              margin: EdgeInsets.only(bottom: ScreenUtil.instance.setHeight(24)),
-              decoration: BoxDecoration(
-                color:Colors.white,
-                  borderRadius: BorderRadius.circular(5),
-                  boxShadow: [
-                    BoxShadow(
-                        color: Styles.CUSTOM_SHADOW_COLOR,
-                        blurRadius: 15,
-                        offset: Offset(0, 2))
-                  ]),
-              child: Container(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
+          onTap: onTap,
+          child: Container(
+            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+            height: ScreenUtil.instance.setHeight(70),
+            margin: EdgeInsets.only(bottom: ScreenUtil.instance.setHeight(24)),
+            decoration: BoxDecoration(
+                color: defaultColor,
+                borderRadius: BorderRadius.circular(5),
+                boxShadow: [
+                  BoxShadow(
+                      color: Styles.CUSTOM_SHADOW_COLOR,
+                      blurRadius: 15,
+                      offset: Offset(0, 2))
+                ]),
+            child: Builder(builder: (BuildContext context) {
+              if (otherContainer == true) {
+                return Center(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Text(
+                        text,
+                        style: TextStyle(
+                            fontSize: textSize,
+                            color: Styles.PRIMARY_COLOR,
+                            fontFamily: 'Montserrat',
+                            fontWeight: FontWeight.w500),
+                      ),
 
-                           Container(
-                          child: ( visiblePreIcon == true)
-                              ? Container(
-                                  child: Icon(
-                                    preIcon,
-                                    size: preIconSize,
-                                    color: preIconColor,
-                                  ),
-                                )
-                              : Container(),
-                        ),
-
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        
-                          Container(
-                                  child:Text(
-                                   text,
-                                    style: TextStyle(
-                                     fontSize: 19,
-                                  color: Colors.black,
-                                fontFamily: 'Montserrat',
-                                   fontWeight: FontWeight.w500),
+                        SizedBox(
+                      width: ScreenUtil.instance.setWidth(10),
+                    ),
+                      
+                      Container(
+                        child: (visiblePostIcon == true)
+                            ? Container(
+                                child: Icon(
+                                  postIcon,
+                                  size: postIconSize,
+                                  color: postIconColor,
                                 ),
+                              )
+                            : Container(),
+                      ),
+                    ],
+                  ),
+                );
+              } 
+              else {
+                return (visiblePreIcon == false && visiblePostIcon == false)
+                    ? Container(
+                        child: Center(
+                          child: Container(
+                            child: Text(
+                              text,
+                              style: TextStyle(
+                                  fontSize: textSize,
+                                  color: Colors.black,
+                                  fontFamily: 'Montserrat',
+                                  fontWeight: FontWeight.w500),
+                            ),
+                          ),
                         ),
+                      )
+                    : Container(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
                             Container(
-                              child:( visiblePreIcon == true)? SizedBox(
-                              width: ScreenUtil.instance.setWidth(10), ):Container()
+                              child: (visiblePreIcon == true)
+                                  ? Container(
+                                      child: Icon(
+                                        preIcon,
+                                        size: preIconSize,
+                                        color: preIconColor,
+                                      ),
+                                    )
+                                  : Container(),
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Container(
+                                  child: Text(
+                                    text,
+                                    style: TextStyle(
+                                        fontSize: 19,
+                                        color: Colors.black,
+                                        fontFamily: 'Montserrat',
+                                        fontWeight: FontWeight.w500),
                                   ),
-
-
-
-                             Container(
-                      child: (visiblePostIcon == true)
-                          ? Container(
-                              child: Icon(
-                                postIcon,
-                                size: postIconSize,
-                              ),
-                            )
-                          : Container(),
-                    ),
-
-
-
-                      ],
-                    ),
-
-                  ],
-
-                ),
-              )),
+                                ),
+                                Container(
+                                    child: (visiblePreIcon == true)
+                                        ? SizedBox(
+                                            width: ScreenUtil.instance
+                                                .setWidth(10),
+                                          )
+                                        : Container()),
+                                Container(
+                                  child: (visiblePostIcon == true)
+                                      ? Container(
+                                          child: Icon(
+                                            postIcon,
+                                            size: postIconSize,
+                                          ),
+                                        )
+                                      : Container(),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      );
+              }
+            }),
+          ),
         ));
   }
 }

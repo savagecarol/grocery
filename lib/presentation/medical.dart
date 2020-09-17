@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grocery/presentation/custom/cutom_scaffold.dart';
 import 'package:grocery/presentation/custom/text_icon_card.dart';
-import 'package:grocery/presentation/pending_prescription.dart';
+import 'package:grocery/presentation/prescription.dart';
 import 'package:grocery/presentation/splashpage.dart';
 import 'package:grocery/utils/default.dart';
 import 'package:grocery/utils/string_values.dart';
@@ -21,8 +21,14 @@ class _MedicalPageState extends State<MedicalPage> {
     Navigator.pushNamed(context, SplashPage.routeNamed);
   }
 
-  _navigateToPendingReports() {
-          Navigator.pushNamed(context, PendingReports.routeNamed);    
+  _navigateToPrescription() {
+    prescription_report = 1;
+    Navigator.pushNamed(context, Prescription.routeNamed);
+  }
+
+  _navigateToReport() {
+        prescription_report = 0;
+    Navigator.pushNamed(context, Prescription.routeNamed);
   }
 
   @override
@@ -62,6 +68,7 @@ class _MedicalPageState extends State<MedicalPage> {
                 visiblePostIcon: true,
                 postIcon: Icons.arrow_forward,
                 postIconSize: 20,
+                onTap: _navigateToPrescription,
               ),
               CustomTextIconCard(
                 visiblePreIcon: true,
@@ -72,7 +79,7 @@ class _MedicalPageState extends State<MedicalPage> {
                 visiblePostIcon: true,
                 postIcon: Icons.arrow_forward,
                 postIconSize: 20,
-                onTap: _navigateToPendingReports,
+                onTap: _navigateToReport,
               ),
             ],
           ),

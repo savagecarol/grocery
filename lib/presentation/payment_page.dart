@@ -68,6 +68,10 @@ class _PaymentPageState extends State<PaymentPage> {
                 image: AssetImage(Strings.DEBIT_CARD_IMAGE), fit: BoxFit.fill)),),
 
 
+
+
+
+
                       Container(  width: ScreenUtil.instance.setWidth(110),
                   height: ScreenUtil.instance.setHeight(245),
                   decoration: BoxDecoration(
@@ -76,6 +80,10 @@ class _PaymentPageState extends State<PaymentPage> {
             image: DecorationImage(
                 image: AssetImage(Strings.DEBIT_CARD_IMAGE), fit: BoxFit.fill)),),
                 
+
+
+
+
                    Container(  width: ScreenUtil.instance.setWidth(110),
                   height: ScreenUtil.instance.setHeight(210),
                   decoration: BoxDecoration(

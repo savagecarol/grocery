@@ -54,16 +54,23 @@ abstract class Strings {
   static const String CREDT_AND_DEBIT_CARD = 'Credit and Debit Cards';
 
   static const String RATE_US = 'Rate Us';
-    static const String FOOD = 'Food';
-        static const String POPULAR = 'Popular';
-            static const String NEAR_YOU = 'Near You';
+  static const String FOOD = 'Food';
+  static const String POPULAR = 'Popular';
+  static const String NEAR_YOU = 'Near You';
 
+  static const String FIND_FOOD_OR_RESTAURANT = 'Find A Food Or A Restaurant';
 
-    static const String FIND_FOOD_OR_RESTAURANT='Find A Food Or A Restaurant';
+  static const String MEDICAL = 'Medical';
 
-    static const String MEDICAL = 'Medical';
+  static const String UPLOAD_NEW_PRESCRIPTION = 'Upload New Prescription';
+  static const String PENDING_REPORTS = 'Pending Reports';
+  static const String NO_PENDING_REPORTS = 'No Pending Reports';
 
-     static const String UPLOAD_NEW_PRESCRIPTION = 'Upload New Prescription';
-      static const String PENDING_REPORTS = 'Pending Reports';
-         static const String NO_PENDING_REPORTS = 'No Pending Reports';
+  static const String COLLECT_BLOOD_SAMPLE_FROM_HOME =
+      'Collect Blood Sample from Home';
+  static const String COLLECT_BOOOD_SAMPLE_FROM_CENTRE =
+      'Collect Blood Sample From Centre';
+  static const String SUBMIT = 'Submit';
+
+  static const String UPLOAD_PRESCRIPTION = 'Upload Prescription';
 }
