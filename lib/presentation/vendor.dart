@@ -8,6 +8,7 @@ import 'package:grocery/presentation/custom/near_card.dart';
 import 'package:grocery/presentation/custom/popular_card.dart';
 import 'package:grocery/presentation/custom/textfield.dart';
 import 'package:grocery/presentation/splashpage.dart';
+import 'package:grocery/presentation/vendorsubcategory.dart';
 import 'package:grocery/utils/default.dart';
 import 'package:grocery/utils/string_values.dart';
 import 'package:grocery/utils/styles.dart';
@@ -60,15 +61,10 @@ class VendorPageState extends State<VendorPage> {
     }
   }
 
-  // _navigateToMenubyPopularCard() {
-  //   menutype = true;
-  //   Navigator.pushNamed(context, MenuListPage.routeNamed);
-  // }
-
-  // _navigateToMenubyNearCard() {
-  //   menutype = false;
-  //   Navigator.pushNamed(context, MenuListPage.routeNamed);
-  // }
+  _vendorSubCategory()
+  {
+    Navigator.pushNamed(context, SubCategory.routeNamed);
+  }
 
   _scrollListener() {
     if (_controller.offset > _controller.position.minScrollExtent &&
@@ -152,7 +148,8 @@ class VendorPageState extends State<VendorPage> {
                               address: popular[index].address,
                               rating: popular[index].rating,
                               time: popular[index].time,
-                              boxs: boxshadowcolor);
+                              boxs: boxshadowcolor,
+                              onTap: _vendorSubCategory,);
                         }),
                   ),
                   SizedBox(
@@ -184,6 +181,7 @@ class VendorPageState extends State<VendorPage> {
                             address: near[index].address,
                             rating: near[index].rating,
                             time: near[index].time,
+                             onTap: _vendorSubCategory,
                           );
                         }),
                   ),

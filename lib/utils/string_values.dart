@@ -72,8 +72,6 @@ abstract class Strings {
   static const String POPULAR = 'Popular';
   static const String NEAR_YOU = 'Near You';
 
- 
-
   static const String MEDICAL = 'Medical';
 
   static const String UPLOAD_NEW_PRESCRIPTION = 'Upload New Prescription';
@@ -88,8 +86,6 @@ abstract class Strings {
 
   static const String UPLOAD_PRESCRIPTION = 'Upload Prescription';
 
-
-
   // Vendor
   static const String GROCERY = 'Grocery';
   static const String FOOD = 'Food';
@@ -97,9 +93,15 @@ abstract class Strings {
   static const String MEDICINE = 'Medicine';
   static const String BOOK = 'Book';
   // venddor Search bar
-   static const String FIND_GROCERY = 'Find Grocery';
-    static const String FIND_FOOD = 'Find Food';
-     static const String FIND_LIQUID = 'Find Liquid';
-      static const String FIND_MEDICINE = 'Find MEDICINE';
-       static const String FIND_BOOK = 'Find BOOK';
+  static const String FIND_GROCERY = 'Find Grocery';
+  static const String FIND_FOOD = 'Find Food';
+  static const String FIND_LIQUID = 'Find Liquid';
+  static const String FIND_MEDICINE = 'Find MEDICINE';
+  static const String FIND_BOOK = 'Find BOOK';
+
+  static const String GROCERY_SHOP_NAME = 'Grocery Shop Name';
+  static const String FOOD_SHOP_NAME = 'Food Shop Name';
+  static const String LIQUID_SHOP_NAME = 'Liguid Shop Name';
+  static const String MEDICINE_SHOP_NAME = 'Medicine Shop Name';
+  static const String BOOK_SHOP_NAME = 'Book Shop Name';
 }

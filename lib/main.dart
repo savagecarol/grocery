@@ -8,6 +8,7 @@ import 'package:grocery/presentation/payment_page.dart';
 import 'package:grocery/presentation/prescription.dart';
 import 'package:grocery/presentation/login_otp_detail.dart';
 import 'package:grocery/presentation/splashpage.dart';
+import 'package:grocery/presentation/vendorsubcategory.dart';
 import 'package:grocery/utils/string_values.dart';
 
 void main() => runApp(Grocery());
@@ -33,6 +34,7 @@ class Grocery extends StatelessWidget {
             MedicalPage.routeNamed: (BuildContext context) => MedicalPage(),
             Prescription.routeNamed: (BuildContext context) => Prescription(),
             RegistrationOTPLoginPage.routeNamed: (BuildContext context) => RegistrationOTPLoginPage(),
+            SubCategory.routeNamed: (BuildContext context) => SubCategory(),
         });
   }
 }
