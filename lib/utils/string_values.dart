@@ -12,15 +12,25 @@ abstract class Strings {
   static const String DEFAULT_USER_IMAGE =
       'https://www.argentum.org/wp-content/uploads/2018/12/blank-profile-picture-973460_6404.png';
 
-  static const String IMAGE = 
-  'https://i.pinimg.com/originals/24/37/bd/2437bd9758a684862c11aa9e8f20341a.jpg';
+  static const String IMAGE =
+      'https://i.pinimg.com/originals/24/37/bd/2437bd9758a684862c11aa9e8f20341a.jpg';
+
+  static const String GENRAL_PNG_IMAGE =
+      'https://64.media.tumblr.com/0c69e0407b7c88e299983a95865fa956/72526e34ca901262-1c/s640x960/84dff16fc37766ed9a7ddd72810ed2d9a6e309ba.png';
 // bottom nav bar
-  static const String NAME='Name';
-  static const String Email='Email';
+  static const String ENTER_YOUR_MOBILE_NUMBER = 'Enter Your Mobile Number';
+  static const String SKIP = 'Skip';
+  static const String NAME = 'Name';
+  static const String Email = 'Email';
   static const String CART = 'Cart';
   static const String HOME = 'Home';
   static const String SEARCH = 'Search';
   static const String MORE = 'More';
+  static const String CONFIRM = 'Confirm';
+
+  //OTP
+  static const String ENTER_OTP = 'Enter OTP';
+  static const String RESEND_OTP = 'Resend OTP?';
 
   static const String SELECT_DELIEVERY_LOCATION = 'Select Delievery Location';
   static const String OFFERS = 'Offers';
@@ -59,11 +69,10 @@ abstract class Strings {
   static const String CREDT_AND_DEBIT_CARD = 'Credit and Debit Cards';
 
   static const String RATE_US = 'Rate Us';
-  static const String FOOD = 'Food';
   static const String POPULAR = 'Popular';
   static const String NEAR_YOU = 'Near You';
 
-  static const String FIND_FOOD_OR_RESTAURANT = 'Find A Food Or A Restaurant';
+ 
 
   static const String MEDICAL = 'Medical';
 
@@ -78,4 +87,19 @@ abstract class Strings {
   static const String SUBMIT = 'Submit';
 
   static const String UPLOAD_PRESCRIPTION = 'Upload Prescription';
+
+
+
+  // Vendor
+  static const String GROCERY = 'Grocery';
+  static const String FOOD = 'Food';
+  static const String LIQUID = 'Liquid';
+  static const String MEDICINE = 'Medicine';
+  static const String BOOK = 'Book';
+  // venddor Search bar
+   static const String FIND_GROCERY = 'Find Grocery';
+    static const String FIND_FOOD = 'Find Food';
+     static const String FIND_LIQUID = 'Find Liquid';
+      static const String FIND_MEDICINE = 'Find MEDICINE';
+       static const String FIND_BOOK = 'Find BOOK';
 }

@@ -8,9 +8,9 @@ import 'package:grocery/presentation/custom/category_container.dart';
 import 'package:grocery/presentation/custom/profile_image.dart';
 import 'package:grocery/presentation/custom/scroll_card.dart';
 import 'package:grocery/presentation/custom/textfield.dart';
-import 'package:grocery/presentation/food.dart';
+import 'package:grocery/presentation/vendor.dart';
 import 'package:grocery/presentation/medical.dart';
-import 'package:grocery/presentation/payment_page.dart';
+import 'package:grocery/utils/default.dart';
 import 'package:grocery/utils/string_values.dart';
 
 class HomePage extends StatefulWidget {
@@ -38,11 +38,26 @@ class _HomePageState extends State<HomePage> {
   }
 
   _navigateToDefaultPage(var index) {
-     if (index == 0) Navigator.pushNamed(context, FoodPage.routeNamed);
-    if (index == 1) Navigator.pushNamed(context, MedicalPage.routeNamed);
-        if (index == 2) Navigator.pushNamed(context, FoodPage.routeNamed);
-    if (index == 3) Navigator.pushNamed(context, FoodPage.routeNamed);
-    if (index == 4) Navigator.pushNamed(context, FoodPage.routeNamed);
+    if (index == 0) {
+      categorys = 0;
+      Navigator.pushNamed(context, VendorPage.routeNamed);
+    }
+    if (index == 1) {
+      categorys = 1;
+      Navigator.pushNamed(context, VendorPage.routeNamed);
+    }
+    if (index == 2) {
+      categorys = 2;
+      Navigator.pushNamed(context, VendorPage.routeNamed);
+    }
+    if (index == 3) {
+      categorys = 3;
+      Navigator.pushNamed(context, VendorPage.routeNamed);
+    }
+    if (index == 4) {
+      categorys = 4;
+      Navigator.pushNamed(context, VendorPage.routeNamed);
+    }
   }
 
   @override

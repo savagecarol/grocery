@@ -3,8 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grocery/models/nearyou.dart';
-import 'package:grocery/models/popular_food.dart';
-import 'package:grocery/presentation/custom/cutom_scaffold.dart';
+import 'package:grocery/models/popular_vendor.dart';
 import 'package:grocery/presentation/custom/near_card.dart';
 import 'package:grocery/presentation/custom/popular_card.dart';
 import 'package:grocery/presentation/custom/textfield.dart';
@@ -13,30 +12,53 @@ import 'package:grocery/utils/default.dart';
 import 'package:grocery/utils/string_values.dart';
 import 'package:grocery/utils/styles.dart';
 
-class FoodPage extends StatefulWidget {
-  static const String routeNamed = 'Food';
+class VendorPage extends StatefulWidget {
+  static const String routeNamed = 'vendor';
 
   @override
-  FoodPageState createState() => FoodPageState();
+  VendorPageState createState() => VendorPageState();
 }
 
-class FoodPageState extends State<FoodPage> {
+class VendorPageState extends State<VendorPage> {
   ScrollController _controller;
   var _current = 0;
   var newslist;
-  List<PopularFoodModel> popular = List<PopularFoodModel>();
+  List<PopularVendorModel> popular = List<PopularVendorModel>();
   List<NearYouModel> near = List<NearYouModel>();
   bool moveup = false;
   bool boxshadowcolor = false;
+  String searchText;
+  String appbarText;
+
   @override
   void initState() {
     _controller = ScrollController();
     _controller.addListener(_scrollListener);
+
+    search(categorys);
     popular = getpopularfood();
     near = getnear();
     super.initState();
   }
 
+  search(int categorys) {
+    if (categorys == 0) {
+      appbarText = Strings.GROCERY;
+      searchText = Strings.FIND_GROCERY;
+    } else if (categorys == 1) {
+      appbarText = Strings.MEDICINE;
+          searchText = Strings.FIND_MEDICINE;
+    } else if (categorys == 2) {
+      appbarText = Strings.FOOD;
+          searchText = Strings.FIND_FOOD;
+    } else if (categorys == 3) {
+      appbarText = Strings.BOOK;
+          searchText = Strings.FIND_BOOK;
+    } else if (categorys == 4) {
+      appbarText = Strings.LIQUID;
+          searchText = Strings.FIND_LIQUID;
+    }
+  }
 
   // _navigateToMenubyPopularCard() {
   //   menutype = true;
@@ -69,10 +91,7 @@ class FoodPageState extends State<FoodPage> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-          child: Scaffold(
-        // appBarText: Strings.FOOD,
-        // appbarOnTap: _navigateToHomePage,
-        // appBarTextSize: 19,
+      child: Scaffold(
         body: Container(
           color: Styles.PRIMARY_COLOR,
           child: Stack(
@@ -83,44 +102,40 @@ class FoodPageState extends State<FoodPage> {
                 controller: _controller,
                 children: <Widget>[
                   Row(
-              children: [
-                 SizedBox(
-                    width: ScreenUtil.instance.setWidth(8),
+                    children: [
+                      SizedBox(
+                        width: ScreenUtil.instance.setWidth(8),
+                      ),
+                      IconButton(
+                          icon: new Icon(
+                            Icons.arrow_back,
+                            color: Styles.ICON_COLOR,
+                            size: 28,
+                          ),
+                          onPressed: _navigateToHomePage),
+                      Text(
+                        appbarText,
+                        style: TextStyle(
+                            fontSize: 19,
+                            color: Colors.black,
+                            fontFamily: 'Montserrat',
+                            fontWeight: FontWeight.w400),
+                      ),
+                    ],
                   ),
-                IconButton(
-                  icon: new Icon(
-                    Icons.arrow_back,
-                    color: Styles.ICON_COLOR,
-                    size: 28,
-                  ),
-                  onPressed: _navigateToHomePage
-                ),
-                Text(
-              Strings.FOOD,
-                  style: TextStyle(
-                      fontSize: 19,
-                      color: Colors.black,
-                      fontFamily: 'Montserrat',
-                      fontWeight: FontWeight.w400),
-                ),
-              ],
-            ),
-
-
-
                   SizedBox(
                     height: 88,
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 16),
                     child: Text(
-                Strings.POPULAR,
-                style: TextStyle(
-                    fontSize: 24,
-                    color: Colors.black.withOpacity(0.5),
-                    fontFamily: 'Montserrat',
-                    fontWeight: FontWeight.w500),
-              ),
+                      Strings.POPULAR,
+                      style: TextStyle(
+                          fontSize: 24,
+                          color: Colors.black.withOpacity(0.5),
+                          fontFamily: 'Montserrat',
+                          fontWeight: FontWeight.w500),
+                    ),
                   ),
                   SizedBox(
                     height: ScreenUtil.instance.setHeight(24),
@@ -145,14 +160,14 @@ class FoodPageState extends State<FoodPage> {
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 16),
-                    child:Text(
-                Strings.NEAR_YOU,
-                style: TextStyle(
-                    fontSize: 24,
-                    color: Colors.black.withOpacity(0.5),
-                    fontFamily: 'Montserrat',
-                    fontWeight: FontWeight.w500),
-              ),
+                    child: Text(
+                      Strings.NEAR_YOU,
+                      style: TextStyle(
+                          fontSize: 24,
+                          color: Colors.black.withOpacity(0.5),
+                          fontFamily: 'Montserrat',
+                          fontWeight: FontWeight.w500),
+                    ),
                   ),
                   SizedBox(
                     height: ScreenUtil.instance.setHeight(24),
@@ -175,12 +190,12 @@ class FoodPageState extends State<FoodPage> {
                 ],
               ),
               Positioned(
-                top:(moveup) ? 0:ScreenUtil.instance.setHeight(68),
+                top: (moveup) ? 0 : ScreenUtil.instance.setHeight(68),
                 child: CustomTextField(
                   padding: 0,
                   size: moveup,
                   hintTextSize: 14,
-                  hintText: Strings.FIND_FOOD_OR_RESTAURANT,
+                  hintText: searchText,
                   icon: Icons.location_on,
                   isPrefixIcon: true,
                 ),
