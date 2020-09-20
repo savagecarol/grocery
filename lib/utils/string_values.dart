@@ -104,4 +104,7 @@ abstract class Strings {
   static const String LIQUID_SHOP_NAME = 'Liguid Shop Name';
   static const String MEDICINE_SHOP_NAME = 'Medicine Shop Name';
   static const String BOOK_SHOP_NAME = 'Book Shop Name';
+
+  static const String SEARCH_ITEM = 'Search Items';
+
 }
