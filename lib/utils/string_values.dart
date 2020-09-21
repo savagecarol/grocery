@@ -107,4 +107,11 @@ abstract class Strings {
 
   static const String SEARCH_ITEM = 'Search Items';
 
+  static const String ADD_LIST = 'Add List';
+  static const String ADD_MEDICINE = 'Add Prescription';
+
+  static const String UPLOAD_NEW_LIST = 'Upload New List';
+  static const String UPLOAD_PICTURE = 'Upload Picture';
+  static const String CREATE_LIST = 'Create List';
+  static const String BASKET = 'Basket';
 }

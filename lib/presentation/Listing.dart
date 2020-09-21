@@ -2,40 +2,62 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grocery/presentation/custom/cutom_scaffold.dart';
 import 'package:grocery/presentation/custom/text_icon_card.dart';
-import 'package:grocery/presentation/prescription.dart';
-import 'package:grocery/presentation/splashpage.dart';
+import 'package:grocery/presentation/lister.dart';
+import 'package:grocery/presentation/vendor.dart';
 import 'package:grocery/utils/default.dart';
 import 'package:grocery/utils/string_values.dart';
 import 'package:grocery/utils/styles.dart';
 
-class MedicalPage extends StatefulWidget {
-  static const String routeNamed = 'Medical';
+class ListingPage extends StatefulWidget {
+  static const String routeNamed = 'listing';
 
   @override
-  _MedicalPageState createState() => _MedicalPageState();
+  _ListingPageState createState() => _ListingPageState();
 }
 
-class _MedicalPageState extends State<MedicalPage> {
-  _navigateToHomePage() {
-    currentPage = 0;
-    Navigator.pushNamed(context, SplashPage.routeNamed);
+class _ListingPageState extends State<ListingPage > {
+  _navigateToVendorPage() {
+  
+    Navigator.pushNamed(context, VendorPage.routeNamed);
   }
 
   _navigateToPrescription() {
     prescription_report = 1;
-    Navigator.pushNamed(context, Prescription.routeNamed);
+    Navigator.pushNamed(context, Lister.routeNamed);
   }
 
   _navigateToReport() {
         prescription_report = 0;
-    Navigator.pushNamed(context, Prescription.routeNamed);
+    Navigator.pushNamed(context, Lister.routeNamed);
+  }
+
+  String appbarText;
+
+
+    search(int categorys) {
+    if (categorys == 0) {
+      appbarText = Strings.GROCERY;
+    } else if (categorys == 1) {
+      appbarText = Strings.MEDICINE;
+    } else if (categorys == 2) {
+      appbarText = Strings.FOOD;
+    } else if (categorys == 3) {
+      appbarText = Strings.BOOK;
+    } else if (categorys == 4) {
+      appbarText = Strings.LIQUID;
+    }
+  }
+
+  void initState() {
+    search(categorys);
+    super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
     return CustomScaffold(
-      appbarOnTap: _navigateToHomePage,
-      appBarText: Strings.MEDICAL,
+      appbarOnTap: _navigateToVendorPage,
+      appBarText: appbarText,
       body: Container(
         color: Styles.PRIMARY_COLOR,
         child: Padding(
@@ -63,7 +85,7 @@ class _MedicalPageState extends State<MedicalPage> {
                 visiblePreIcon: true,
                 preIcon: Icons.developer_board,
                 preIconSize: 28,
-                text: Strings.UPLOAD_NEW_PRESCRIPTION,
+                text: Strings.UPLOAD_NEW_LIST,
                 textSize: 14,
                 visiblePostIcon: true,
                 postIcon: Icons.arrow_forward,

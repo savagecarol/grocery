@@ -133,7 +133,7 @@ class _SubCategoryState extends State<SubCategory> {
                  right: ScreenUtil.instance.setHeight(20),
               child: FloatingActionButton(onPressed: () {},backgroundColor: Styles.ICON_COLOR,
               child:Icon
-              (Icons.shopping_basket),),
+              (Icons.shopping_basket,size: 30,),),
             ),
           ],
         ),
