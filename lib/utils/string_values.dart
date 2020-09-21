@@ -9,6 +9,12 @@ abstract class Strings {
   static const String DEFAULT_USER = 'User John Doe';
   static const String DEFAUTLT_EMAIL = 'JohnDoe1234@gmaial.com';
   static const String DEFAULT_NUMBER = '783098XXXX';
+
+   static const String DEFAULT_SHOP = 'Lorem Lupsom';
+  static const String DEFAUTLT_ADDRESS = 'Lorem Lupsom address';
+  static const String DEFAULT_PRICE = 'Rs.12';
+
+
   static const String DEFAULT_USER_IMAGE =
       'https://www.argentum.org/wp-content/uploads/2018/12/blank-profile-picture-973460_6404.png';
 
@@ -114,4 +120,12 @@ abstract class Strings {
   static const String UPLOAD_PICTURE = 'Upload Picture';
   static const String CREATE_LIST = 'Create List';
   static const String BASKET = 'Basket';
+
+
+    static const String ITEMS = 'Items';
+      static const String SAVINGS = 'Savings';
+        static const String TOTAL = 'Total';
+
+
+
 }

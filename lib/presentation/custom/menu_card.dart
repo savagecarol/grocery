@@ -4,7 +4,6 @@ import 'package:grocery/presentation/custom/row_card.dart';
 import 'package:grocery/utils/string_values.dart';
 import 'package:grocery/utils/styles.dart';
 
-
 class CustomMenuCard extends StatelessWidget {
   final String image;
   final String name;
@@ -77,7 +76,6 @@ class CustomMenuCard extends StatelessWidget {
                             SizedBox(
                               height: ScreenUtil.instance.setHeight(5),
                             ),
-
                             Container(
                               child: Text(
                                 'tasty ans spicy',
@@ -90,10 +88,10 @@ class CustomMenuCard extends StatelessWidget {
                             SizedBox(
                               height: ScreenUtil.instance.setHeight(10),
                             ),
-
                             Container(
                               child: Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: <Widget>[
                                   Text(
                                     'rs.10',

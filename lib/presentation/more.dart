@@ -25,9 +25,6 @@ class _MoreState extends State<More> {
     Navigator.pushNamed(context,RegistrationOTPLoginPage.routeNamed);
   }
 
-
-
-
   @override
   Widget build(BuildContext context) {
     return ListView(

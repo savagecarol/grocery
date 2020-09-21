@@ -4,6 +4,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grocery/models/nearyou.dart';
 import 'package:grocery/models/popular_vendor.dart';
+import 'package:grocery/presentation/basket.dart';
 import 'package:grocery/presentation/custom/near_card.dart';
 import 'package:grocery/presentation/custom/popular_card.dart';
 import 'package:grocery/presentation/custom/textfield.dart';
@@ -49,7 +50,6 @@ class VendorPageState extends State<VendorPage> {
     if (categorys == 0) {
       appbarText = Strings.GROCERY;
       searchText = Strings.FIND_GROCERY;
-   
     } else if (categorys == 1) {
       appbarText = Strings.MEDICINE;
       searchText = Strings.FIND_MEDICINE;
@@ -57,20 +57,23 @@ class VendorPageState extends State<VendorPage> {
     } else if (categorys == 2) {
       appbarText = Strings.FOOD;
       searchText = Strings.FIND_FOOD;
- 
     } else if (categorys == 3) {
       appbarText = Strings.BOOK;
       searchText = Strings.FIND_BOOK;
-
     } else if (categorys == 4) {
       appbarText = Strings.LIQUID;
       searchText = Strings.FIND_LIQUID;
-
     }
   }
 
   _vendorSubCategory() {
     Navigator.pushNamed(context, SubCategory.routeNamed);
+  }
+
+  _navigateToBucketPage() {
+
+    Navigator.pushNamed(context, Basket.routeNamed);
+
   }
 
   _scrollListener() {
@@ -91,9 +94,8 @@ class VendorPageState extends State<VendorPage> {
     Navigator.pushNamed(context, SplashPage.routeNamed);
   }
 
-  _navigateToPrescription()
-  {
-        Navigator.pushNamed(context,ListingPage .routeNamed);
+  _navigateToPrescription() {
+    Navigator.pushNamed(context, ListingPage.routeNamed);
   }
 
   @override
@@ -262,7 +264,7 @@ class VendorPageState extends State<VendorPage> {
                 bottom: ScreenUtil.instance.setHeight(20),
                 right: ScreenUtil.instance.setHeight(20),
                 child: FloatingActionButton(
-                  onPressed: () {},
+                  onPressed: _navigateToBucketPage,
                   backgroundColor: Styles.ICON_COLOR,
                   child: Icon(
                     Icons.shopping_basket,
@@ -277,3 +279,4 @@ class VendorPageState extends State<VendorPage> {
     );
   }
 }
+
