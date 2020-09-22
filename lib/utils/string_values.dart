@@ -135,6 +135,17 @@ abstract class Strings {
   static const String DELIVERY_LOCATION = 'Delivery Location';
 
   static const String OTHER_UPI_APPS = 'Other Upi Apps';
-    static const String ADD_DEBIT_CREDIT_CARD = 'Add Debit/Credit Card';
+  static const String ADD_DEBIT_CREDIT_CARD = 'Add Debit/Credit Card';
+  static const String PAYMENT = 'Payment';
+  static const String SAVED_CARDS = 'Saved Cards';
+
+  static const String CARD_NUMBER = 'CARD NUMBER';
+  static const String EXPIRY_DATE = 'EXPIRE DATE';
+  static const String CVV = 'CVV';
+  static const String CARDHOLDER_NAME = 'CARDHOLDER NAME';
+  static const String SAVED_CARD = 'SAVE CARD';
+
+
+
 
 }

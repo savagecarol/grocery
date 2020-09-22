@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:grocery/presentation/basket.dart';
+import 'package:grocery/presentation/cardadding.dart';
 import 'package:grocery/presentation/delivery_page.dart';
 import 'package:grocery/presentation/vendor.dart';
 import 'package:grocery/presentation/Listing.dart';
@@ -39,6 +40,7 @@ class Grocery extends StatelessWidget {
             SubCategory.routeNamed: (BuildContext context) => SubCategory(),
                 Basket.routeNamed: (BuildContext context) => Basket(),
                 Delivery.routeNamed: (BuildContext context) => Delivery(),
+                CardAdding.routeNamed: (BuildContext context) => CardAdding(),
         });
   }
 }

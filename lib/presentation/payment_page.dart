@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:grocery/presentation/cardadding.dart';
 import 'package:grocery/presentation/custom/cutom_scaffold.dart';
 import 'package:grocery/presentation/custom/text_icon_card.dart';
 import 'package:grocery/presentation/myaccount.dart';
@@ -20,6 +21,9 @@ class _PaymentPageState extends State<PaymentPage> {
      Navigator.of(context).pop();
   }
 
+_navigateToCardAddingPage(){
+    Navigator.pushNamed(context, CardAdding.routeNamed);
+}
 
   @override
   Widget build(BuildContext context) {
@@ -137,6 +141,7 @@ class _PaymentPageState extends State<PaymentPage> {
               visiblePostIcon: true,
               postIcon: Icons.arrow_forward,
               postIconSize: 25,
+              onTap: _navigateToCardAddingPage,
             ),
 
 
