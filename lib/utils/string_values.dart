@@ -10,10 +10,9 @@ abstract class Strings {
   static const String DEFAUTLT_EMAIL = 'JohnDoe1234@gmaial.com';
   static const String DEFAULT_NUMBER = '783098XXXX';
 
-   static const String DEFAULT_SHOP = 'Lorem Lupsom';
+  static const String DEFAULT_SHOP = 'Lorem Lupsom';
   static const String DEFAUTLT_ADDRESS = 'Lorem Lupsom address';
   static const String DEFAULT_PRICE = 'Rs.12';
-
 
   static const String DEFAULT_USER_IMAGE =
       'https://www.argentum.org/wp-content/uploads/2018/12/blank-profile-picture-973460_6404.png';
@@ -121,11 +120,21 @@ abstract class Strings {
   static const String CREATE_LIST = 'Create List';
   static const String BASKET = 'Basket';
 
+  static const String ITEMS = 'Items';
+  static const String SAVINGS = 'Savings';
+  static const String TOTAL = 'Total';
 
-    static const String ITEMS = 'Items';
-      static const String SAVINGS = 'Savings';
-        static const String TOTAL = 'Total';
+  static const String VIEW_BASKET = 'View Basket';
 
+  static const String SUB_TOTAL = 'Sub Total';
+  static const String DELIVERY_FEE = 'Delievery Fee';
+  static const String TAXES = 'Taxes';
+  static const PROCEED_TO_PAY = 'Proceed To Pay';
+  static const String DELIVERY = 'Delivery';
+  static const String CHANGE = 'Change';
+  static const String DELIVERY_LOCATION = 'Delivery Location';
 
+  static const String OTHER_UPI_APPS = 'Other Upi Apps';
+    static const String ADD_DEBIT_CREDIT_CARD = 'Add Debit/Credit Card';
 
 }

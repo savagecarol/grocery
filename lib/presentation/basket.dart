@@ -127,7 +127,9 @@ class _BasketState extends State<Basket> {
                                     ),
                                   ],
                                 ),
-                                RowCardField(),
+                                RowCardField(
+                                
+                                ),
                               ],
                             ),
                           ),
@@ -135,7 +137,9 @@ class _BasketState extends State<Basket> {
                       }),
                 ),
               )),
-              CustomCart(),
+              CustomCart(
+                onlyBetween: true,
+              ),
             ],
           ),
         ));

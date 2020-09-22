@@ -16,8 +16,8 @@ class PaymentPage extends StatefulWidget {
 class _PaymentPageState extends State<PaymentPage> {
 
 
-    _navigateToMyAccountePage() {
-    Navigator.pushNamed(context, MyAccount.routeNamed);
+    _navigatetoPreviouspage() {
+     Navigator.of(context).pop();
   }
 
 
@@ -25,7 +25,7 @@ class _PaymentPageState extends State<PaymentPage> {
   Widget build(BuildContext context) {
     return CustomScaffold(
       appBarText: Strings.SELECT_PAYMENT_METHODS,
-      appbarOnTap:_navigateToMyAccountePage ,
+      appbarOnTap:_navigatetoPreviouspage ,
       appBarTextSize:16,
       body: Container(
         color: Styles.PRIMARY_COLOR,
@@ -118,16 +118,12 @@ class _PaymentPageState extends State<PaymentPage> {
                           height: ScreenUtil.instance.setHeight(32),
                         ),
 
-
-
-
-
                     CustomTextIconCard(
               visiblePreIcon: true,
               preIcon: Icons.developer_board,
               preIconSize: 30,
-              text: Strings.FAQS,
-              textSize: 19,
+              text: Strings.OTHER_UPI_APPS,
+              textSize: 16,
               visiblePostIcon: true,
               postIcon: Icons.arrow_forward,
               postIconSize: 25,
@@ -136,8 +132,8 @@ class _PaymentPageState extends State<PaymentPage> {
               visiblePreIcon: true,
               preIcon: Icons.contacts,
               preIconSize: 30,
-              text: Strings.CONTACT_US,
-              textSize: 19,
+              text: Strings.ADD_DEBIT_CREDIT_CARD,
+              textSize: 16,
               visiblePostIcon: true,
               postIcon: Icons.arrow_forward,
               postIconSize: 25,
