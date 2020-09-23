@@ -44,6 +44,7 @@ class ProfileImage extends StatelessWidget {
                           image: NetworkImage(Strings.DEFAULT_USER_IMAGE),
                           fit: BoxFit.fill)),
                 ),
+                
                 Positioned(
                   top: ScreenUtil.instance.setHeight(40),
                   right: .1,
